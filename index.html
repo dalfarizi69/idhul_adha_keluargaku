@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ied Adha card</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	 <link rel="stylesheet" type="text/css" href="style.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Loop&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+	<style type='text/css'>
+	.snowball{position:fixed;top:0;left:0;right:0;pointer-events:none;z-index:20}
+	.snowsand{height:100%;position:relative;overflow:hidden;z-index:1}
+</style>
+</head>
+<body>
+<div class="depan">
+  <div class="depan1">
+ <center><img class="anime" src="animasi.png"></center> 
+		<center><button class="click">click</button></center>
+</div></div>
+<div class="row">
+  	<center><div>
+    <audio id="mysong">
+    <source src="payphone.mp3" type="audio/mpeg">
+    Browsermu tidak mendukung tag audio, upgrade donk!
+  	</audio></div>    	
+  		<center> <div><h1 id="ultah">Selamat hari raya ied adha 1442</h1></div>
+  		<br>
+<div class="mySlides fades">
+      <img src="1.jpg" style="width:50%">
+    </div>
+    <div class="mySlides fades">
+    <img src="2.jpg" style="width:50%"></div>
+    <div class="mySlides fades"> <img src="3.jpg" style="width:50%">
+    </div>
+  <div style="text-align:center">
+    <div class="dot"></div> 
+     <div class="dot"></div> 
+     <div class="dot"></div> 
+		</div><br>
+  		<div><h1 id="ultah1">Mohon maaf lahir batin</h1></div><br>
+    	</div></center>
+      <div><img class="domba" src="domba.png"></div>
+	</div>
+	<div class='snowsand'>
+<canvas class='snowball' id='snowball'></canvas>
+</div>
+<script type='text/javascript'>
+!function(){function t(t){var n=t.getContext("2d"),e=0,i=0,o=[],d=function(){this.x=this.y=this.dx=this.dy=0,this.reset()};function a(){e=window.innerWidth,i=window.innerHeight,t.width=e,t.height=i,function(t){if(t!=o.length){o=[];for(var n=0;n<t;n++)o.push(new d)}}(e*i/1e4)}d.prototype.reset=function(){this.y=Math.random()*i,this.x=Math.random()*e,this.dx=1*Math.random()-.5,this.dy=.5*Math.random()+.5},a(),function t(){n.clearRect(0,0,e,i),n.fillStyle="rgba(255,255,255,.3)",o.forEach(function(t){t.y+=t.dy,t.x+=t.dx,t.y>i&&(t.y=0),t.x>e&&(t.reset(),t.y=0),n.beginPath(),n.arc(t.x,t.y,5,0,2*Math.PI,!1),n.fill()}),window.requestAnimationFrame(t)}(),window.addEventListener("resize",a)}var n;n=function(){t(document.getElementById("snowball"))},"loading"!=document.readyState?n():document.addEventListener("DOMContentLoaded",n)}();
+
+$(document).ready(function(){
+  	$("button").click(function(){
+	var audio = $('#mysong')[0];
+        audio.play();
+    $(".depan").fadeOut(3000);
+    $(".click").fadeOut(3000);
+  });
+});
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 8000); // Change image every 2 seconds
+}
+</script>
+</body>
+</html>
